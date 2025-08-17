@@ -9,7 +9,7 @@ export default function ContactPage() {
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-primary">RealEstate Pro</h1>
+            <h1 className="text-2xl font-bold text-primary">Homara Real Estate</h1>
             <div className="flex items-center gap-4">
               <a href="/" className="text-muted-foreground hover:text-foreground">
                 Home
