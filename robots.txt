@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yourusername.github.io/realestate-pro/sitemap.xml
+
+# Disallow admin/dashboard pages from search engines (optional)
+# Disallow: /dashboard.html
+
+# Allow all property and public pages
+Allow: /index.html
+Allow: /contact.html
+Allow: /property-*.html
+Allow: /css/
+Allow: /js/
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+
+# Crawl delay (optional - adjust as needed)
+Crawl-delay: 1

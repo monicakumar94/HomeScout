@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Downtown Condo - RealEstate Pro</title>
+    <meta name="description" content="Beautiful 2-bedroom, 2-bathroom modern condo in downtown Seattle. $850,000 - 1,200 sqft.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'oklch(1 0 0)',
+                        foreground: 'oklch(0.35 0 0)',
+                        card: 'oklch(0.98 0 0)',
+                        'card-foreground': 'oklch(0.35 0 0)',
+                        primary: 'oklch(0.45 0.15 160)',
+                        'primary-foreground': 'oklch(1 0 0)',
+                        secondary: 'oklch(0.96 0 0)',
+                        'secondary-foreground': 'oklch(0.35 0 0)',
+                        muted: 'oklch(0.98 0.02 140)',
+                        'muted-foreground': 'oklch(0.45 0 0)',
+                        accent: 'oklch(0.55 0.15 160)',
+                        'accent-foreground': 'oklch(1 0 0)',
+                        border: 'oklch(0.9 0 0)',
+                        ring: 'oklch(0.45 0.15 160 / 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-main img {
+            transition: transform 0.3s ease;
+        }
+        .gallery-thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+        }
+        .gallery-thumbnail {
+            flex-shrink: 0;
+            width: 80px;
+            height: 60px;
+            border-radius: 0.375rem;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .gallery-thumbnail.active {
+            border-color: oklch(0.45 0.15 160);
+        }
+        .gallery-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-background">
+    <!-- Header -->
+    <header class="border-b bg-card">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-primary">RealEstate Pro</a>
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="text-muted-foreground hover:text-foreground">← Back to Listings</a>
+                    <button class="px-4 py-2 border border-border rounded-md hover:bg-secondary">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Property Header -->
+        <div class="mb-8">
+            <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                <a href="index.html" class="hover:text-foreground">Home</a>
+                <span>›</span>
+                <span>Properties</span>
+                <span>›</span>
+                <span>Modern Downtown Condo</span>
+            </div>
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-foreground mb-2">Modern Downtown Condo</h1>
+                    <div class="flex items-center text-muted-foreground mb-2">
+                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>Downtown Seattle, WA</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm">
+                        <span class="flex items-center">
+                            <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                            </svg>
+                            2 beds
+                        </span>
+                        <span class="flex items-center">
+                            <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3a2 2 0 002 2h4a2 2 0 002-2v-3"></path>
+                            </svg>
+                            2 baths
+                        </span>
+                        <span class="flex items-center">
+                            <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4a1 1 0 011-1h4M4 16v4a1 1 0 001 1h4m8-16h4a1 1 0 011 1v4m-4 12h4a1 1 0 001-1v-4"></path>
+                            </svg>
+                            1,200 sqft
+                        </span>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="text-3xl font-bold text-primary mb-2">$850,000</div>
+                    <div class="text-sm text-muted-foreground">$708/sqft</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Image Gallery -->
+            <div class="lg:col-span-2">
+                <div class="gallery-container bg-card rounded-lg overflow-hidden mb-4">
+                    <div class="gallery-main">
+                        <img id="mainImage" src="modern-condo-living-room.png" alt="Modern Downtown Condo" class="w-full h-96 object-cover" onerror="this.src='https://via.placeholder.com/800x400?text=Property+Image'">
+                    </div>
+                </div>
+                <div class="gallery-thumbnails">
+                    <div class="gallery-thumbnail active" data-image="modern-condo-living-room.png">
+                        <img src="modern-condo-living-room.png" alt="Living Room" onerror="this.src='https://via.placeholder.com/80x60?text=Living'">
+                    </div>
+                    <div class="gallery-thumbnail" data-image="modern-condo-kitchen.png">
+                        <img src="modern-condo-kitchen.png" alt="Kitchen" onerror="this.src='https://via.placeholder.com/80x60?text=Kitchen'">
+                    </div>
+                    <div class="gallery-thumbnail" data-image="modern-condo-bedroom.png">
+                        <img src="modern-condo-bedroom.png" alt="Bedroom" onerror="this.src='https://via.placeholder.com/80x60?text=Bedroom'">
+                    </div>
+                    <div class="gallery-thumbnail" data-image="modern-condo-bathroom.png">
+                        <img src="modern-condo-bathroom.png" alt="Bathroom" onerror="this.src='https://via.placeholder.com/80x60?text=Bathroom'">
+                    </div>
+                </div>
+
+                <!-- Property Description -->
+                <div class="bg-card rounded-lg p-6 mb-6">
+                    <h2 class="text-xl font-semibold mb-4">Property Description</h2>
+                    <p class="text-muted-foreground mb-4">
+                        Experience urban living at its finest in this stunning modern condo located in the heart of downtown Seattle. This beautifully designed 2-bedroom, 2-bathroom unit offers 1,200 square feet of contemporary living space with floor-to-ceiling windows that flood the home with natural light.
+                    </p>
+                    <p class="text-muted-foreground mb-4">
+                        The open-concept layout seamlessly connects the living, dining, and kitchen areas, perfect for entertaining. The gourmet kitchen features premium stainless steel appliances, quartz countertops, and custom cabinetry. Both bedrooms are generously sized with ample closet space, and the master suite includes an en-suite bathroom with luxury finishes.
+                    </p>
+                    <p class="text-muted-foreground">
+                        Building amenities include a fitness center, rooftop terrace, concierge service, and secure parking. Located within walking distance of Pike Place Market, waterfront parks, and the city's best restaurants and entertainment venues.
+                    </p>
+                </div>
+
+                <!-- Features & Amenities -->
+                <div class="bg-card rounded-lg p-6">
+                    <h2 class="text-xl font-semibold mb-4">Features & Amenities</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-medium mb-2">Interior Features</h3>
+                            <ul class="text-sm text-muted-foreground space-y-1">
+                                <li>• Hardwood floors throughout</li>
+                                <li>• Floor-to-ceiling windows</li>
+                                <li>• In-unit washer/dryer</li>
+                                <li>• Central air conditioning</li>
+                                <li>• Walk-in closets</li>
+                                <li>• Modern light fixtures</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2">Building Amenities</h3>
+                            <ul class="text-sm text-muted-foreground space-y-1">
+                                <li>• 24/7 concierge service</li>
+                                <li>• Fitness center</li>
+                                <li>• Rooftop terrace</li>
+                                <li>• Secure parking garage</li>
+                                <li>• Pet-friendly</li>
+                                <li>• Package receiving</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact & Agent Info -->
+            <div class="space-y-6">
+                <!-- Agent Card -->
+                <div class="bg-card rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="professional-woman-realtor.png" alt="Sarah Johnson" class="w-16 h-16 rounded-full mr-4" onerror="this.src='https://via.placeholder.com/64x64?text=Agent'">
+                        <div>
+                            <h3 class="font-semibold">Sarah Johnson</h3>
+                            <p class="text-sm text-muted-foreground">Licensed Real Estate Agent</p>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <span class="text-yellow-500">★★★★★</span>
+                                <span class="ml-1">4.9 (127 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <button id="contactAgentBtn" class="w-full px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90">
+                            Contact Agent
+                        </button>
+                        <button id="scheduleTourBtn" class="w-full px-4 py-2 border border-border rounded-md hover:bg-secondary">
+                            Schedule Tour
+                        </button>
+                        <div class="flex gap-2">
+                            <button class="flex-1 px-4 py-2 border border-border rounded-md hover:bg-secondary text-sm">
+                                <svg class="h-4 w-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                Call
+                            </button>
+                            <button class="flex-1 px-4 py-2 border border-border rounded-md hover:bg-secondary text-sm">
+                                <svg class="h-4 w-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mortgage Calculator -->
+                <div class="bg-card rounded-lg p-6">
+                    <h3 class="font-semibold mb-4">Mortgage Calculator</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Home Price</label>
+                            <input type="text" value="$850,000" class="w-full px-3 py-2 border border-border rounded-md" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Down Payment</label>
+                            <input type="text" placeholder="$170,000 (20%)" class="w-full px-3 py-2 border border-border rounded-md">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Interest Rate</label>
+                            <input type="text" placeholder="6.5%" class="w-full px-3 py-2 border border-border rounded-md">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Loan Term</label>
+                            <select class="w-full px-3 py-2 border border-border rounded-md">
+                                <option>30 years</option>
+                                <option>15 years</option>
+                            </select>
+                        </div>
+                        <div class="pt-4 border-t border-border">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Est. Monthly Payment</span>
+                                <span class="text-xl font-bold text-primary">$4,289</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Details -->
+                <div class="bg-card rounded-lg p-6">
+                    <h3 class="font-semibold mb-4">Property Details</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-muted-foreground">Property Type</span>
+                            <span>Condo</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-muted-foreground">Year Built</span>
+                            <span>2019</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-muted-foreground">HOA Fees</span>
+                            <span>$450/month</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-muted-foreground">Property Tax</span>
+                            <span>$8,500/year</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-muted-foreground">Parking</span>
+                            <span>1 space included</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-muted-foreground">Pet Policy</span>
+                            <span>Pets allowed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close float-right text-2xl font-bold cursor-pointer">&times;</span>
+            <h3 class="text-xl font-semibold mb-4">Contact Agent</h3>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Name</label>
+                    <input type="text" class="w-full px-3 py-2 border border-border rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border border-border rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Phone</label>
+                    <input type="tel" class="w-full px-3 py-2 border border-border rounded-md">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Message</label>
+                    <textarea rows="4" class="w-full px-3 py-2 border border-border rounded-md" placeholder="I'm interested in this property..."></textarea>
+                </div>
+                <button type="submit" class="w-full px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Schedule Tour Modal -->
+    <div id="tourModal" class="modal">
+        <div class="modal-content">
+            <span class="close float-right text-2xl font-bold cursor-pointer">&times;</span>
+            <h3 class="text-xl font-semibold mb-4">Schedule a Tour</h3>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Name</label>
+                    <input type="text" class="w-full px-3 py-2 border border-border rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border border-border rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Phone</label>
+                    <input type="tel" class="w-full px-3 py-2 border border-border rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Preferred Date</label>
+                    <input type="date" class="w-full px-3 py-2 border border-border rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Preferred Time</label>
+                    <select class="w-full px-3 py-2 border border-border rounded-md" required>
+                        <option value="">Select time</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90">
+                    Schedule Tour
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/property-detail.js"></script>
+</body>
+</html>
