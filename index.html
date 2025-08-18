@@ -209,47 +209,28 @@
 
 
     <!-- Enhanced Filters Bar -->
-    <section class="border-b bg-background">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center gap-4 overflow-x-auto">
-                <!-- Property Type Filters -->
-                <button class="filter-btn px-4 py-2 border border-border rounded-md hover:bg-secondary" data-type="House">House</button>
-                <button class="filter-btn px-4 py-2 border border-border rounded-md hover:bg-secondary" data-type="Condo">Condo</button>
-                <button class="filter-btn px-4 py-2 border border-border rounded-md hover:bg-secondary" data-type="Apartment">Apartment</button>
-                <button class="filter-btn px-4 py-2 border border-border rounded-md hover:bg-secondary" data-type="Townhouse">Townhouse</button>
-                <button class="filter-btn px-4 py-2 border border-border rounded-md hover:bg-secondary" data-type="Villa">Villa</button>
+    <section class="container mx-auto px-4 py-10">
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-xl md:text-2xl font-semibold">Selling Soon Homes in Bengaluru, KA</h2>
+    <div class="flex gap-2">
+      <button id="ssPrev" class="p-2 rounded border hover:bg-secondary" aria-label="Previous">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M15 18 9 12l6-6"/></svg>
+      </button>
+      <button id="ssNext" class="p-2 rounded border hover:bg-secondary" aria-label="Next">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
 
-                <!-- Quick Filters -->
-                <select id="bedsFilter" class="px-3 py-2 border border-border rounded-md">
-                    <option value="">Beds</option>
-                    <option value="1">1+ beds</option>
-                    <option value="2">2+ beds</option>
-                    <option value="3">3+ beds</option>
-                    <option value="4">4+ beds</option>
-                    <option value="5">5+ beds</option>
-                </select>
+  <p class="text-sm text-muted-foreground mb-4">
+    Likely to sell soon based on list date, price, and property details.
+  </p>
 
-                <select id="bathsFilter" class="px-3 py-2 border border-border rounded-md">
-                    <option value="">Baths</option>
-                    <option value="1">1+ baths</option>
-                    <option value="2">2+ baths</option>
-                    <option value="3">3+ baths</option>
-                    <option value="4">4+ baths</option>
-                </select>
+  <div id="ssRail" class="overflow-x-auto scroll-smooth">
+    <div id="ssTrack" class="flex gap-4 min-w-full"></div>
+  </div>
+</section>
 
-                <!-- Advanced Filters Button -->
-                <button id="moreFiltersBtn" class="px-4 py-2 border border-border rounded-md hover:bg-secondary">
-                    <svg class="h-4 w-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2.586a1 1 0 0 1-.293.707l-6.414 6.414a1 1 0 0 0-.293.707v4.586a1 1 0 0 1-.293.707l-2 2A1 1 0 0 1 9 21v-6.586a1 1 0 0 0-.293-.707L2.293 7.293A1 1 0 0 1 2 6.586V4Z"></path>
-                    </svg>
-                    More Filters
-                </button>
-
-                <!-- Active Filters Count -->
-                <span id="activeFilters" class="px-2 py-1 bg-secondary text-secondary-foreground rounded-md text-sm hidden">0 active</span>
-            </div>
-        </div>
-    </section>
 
     <!-- Property Listings -->
     <main class="container mx-auto px-4 py-8">
