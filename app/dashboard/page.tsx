@@ -169,7 +169,7 @@ export default function Dashboard() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold text-primary">RealEstate Pro</h1>
+              <h1 className="text-2xl font-bold text-primary">Homara Real Estate</h1>
               <Badge variant="secondary">Agent Dashboard</Badge>
             </div>
             <div className="flex items-center gap-4">
