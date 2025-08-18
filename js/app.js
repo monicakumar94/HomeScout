@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function homeCard(h) {
-  const fallback = "./public/placeholder.jpg"; // or "https://placehold.co/800x450?text=Property"
+  const fallback = "https://placehold.co/1200x700/jpg?text=Home";
   const imgSrc = h.image || fallback;
 
   return `
