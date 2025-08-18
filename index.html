@@ -154,7 +154,7 @@
 </header>
 
     <!-- Hero Search Section -->
-    <section class="bg-muted py-12">
+<!--     <section class="bg-muted py-12">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
                 <h2 class="text-4xl font-bold text-foreground mb-4">Find Your Dream Home</h2>
@@ -180,7 +180,33 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+    <section class="relative">
+  <img src="public/hero.jpg" alt="" class="h-[56vh] w-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/10"></div>
+
+  <div class="absolute inset-x-0 top-1/2 -translate-y-1/2">
+    <div class="container mx-auto px-4">
+      <h1 class="text-white font-bold leading-tight text-4xl md:text-6xl max-w-3xl">
+        Agents. Tours. Loans. Homes.
+      </h1>
+
+      <form id="homepageSearch" class="mt-6 max-w-2xl" action="#" onsubmit="return false;">
+        <div class="flex items-center gap-2 bg-white rounded-xl shadow px-3 py-2">
+          <svg class="h-5 w-5 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" />
+          </svg>
+          <input id="searchInput" type="text"
+                 placeholder="Enter an address, neighborhood, city, or PIN code"
+                 class="flex-1 border-0 focus:outline-none focus:ring-0 py-2">
+          <button id="searchBtn" class="px-5 py-2 bg-primary text-primary-foreground rounded-lg">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 
     <!-- Enhanced Filters Bar -->
     <section class="border-b bg-background">
