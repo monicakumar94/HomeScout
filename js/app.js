@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const demoHomes = [
     {
       price: 12888800,
-      image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1400&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1400&auto=format&fit=crop",
       address: "3BHK, Sarjapur Road, Bengaluru",
       beds: 3, baths: 3, sqft: 1580, badge: "Spacious and versatile"
     },
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       price: 14490000,
-      image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80",
+      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1400&auto=format&fit=crop",
       address: "3BHK, JP Nagar, Bengaluru",
       beds: 3, baths: 3, sqft: 1450, badge: "Family home"
     },
