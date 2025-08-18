@@ -1,4 +1,4 @@
-# RealEstate Pro - Static Website
+# Homara Real Estate - Static Website
 
 A modern, responsive real estate website built with HTML, CSS, and JavaScript. Perfect for real estate agents and agencies to showcase properties, manage listings, and connect with potential clients.
 
