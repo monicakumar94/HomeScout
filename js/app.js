@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const demoHomes = [
     {
       price: 12888800,
-      image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1400&q=80",
+      image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1400&auto=format&fit=crop",
       address: "3BHK, Sarjapur Road, Bengaluru",
       beds: 3, baths: 3, sqft: 1580, badge: "Spacious and versatile"
     },
