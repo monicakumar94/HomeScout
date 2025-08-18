@@ -43,7 +43,7 @@ const dashboardStats = {
 const recentProperties = [
   {
     id: 1,
-    title: "Modern Downtown Condo",
+    title: "Modern Downtown Condo Apartment",
     price: 850000,
     location: "Downtown Seattle, WA",
     beds: 2,
