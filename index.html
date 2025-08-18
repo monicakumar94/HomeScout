@@ -99,7 +99,7 @@
 </head>
 <body class="min-h-screen bg-background">
     <!-- Header -->
-    <header class="border-b bg-card">
+<!--     <header class="border-b bg-card">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <h1 class="text-2xl font-bold text-primary">Homara Real Estate</h1>
@@ -107,6 +107,51 @@
             </div>
         </div>
     </header>
+ -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <!-- simple house logo -->
+      <svg class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 3 2 12h2v8h6v-5h4v5h6v-8h2L12 3z"/>
+      </svg>
+      <span class="font-semibold text-xl text-foreground">Homara Real Estate</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a class="text-muted-foreground hover:text-foreground" href="#">Buy</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Rent</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Sell</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Get a mortgage</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Find an Agent</a>
+    </nav>
+
+    <div class="hidden md:flex items-center gap-4">
+      <a class="text-muted-foreground hover:text-foreground text-sm" href="#">Manage Rentals</a>
+      <a class="text-muted-foreground hover:text-foreground text-sm" href="#">Advertise</a>
+      <a class="text-muted-foreground hover:text-foreground text-sm" href="#">Help</a>
+      <span class="h-8 w-8 rounded-full bg-primary/10 grid place-items-center text-primary text-xs font-semibold">MK</span>
+    </div>
+
+    <button id="navToggle" class="md:hidden p-2 rounded hover:bg-secondary" aria-expanded="false" aria-controls="mobileNav">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobileNav" class="md:hidden hidden border-t">
+    <nav class="container mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+      <a class="text-muted-foreground hover:text-foreground" href="#">Buy</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Rent</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Sell</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Get a mortgage</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Find an Agent</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Manage Rentals</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Advertise</a>
+      <a class="text-muted-foreground hover:text-foreground" href="#">Help</a>
+    </nav>
+  </div>
+</header>
 
     <!-- Hero Search Section -->
     <section class="bg-muted py-12">
